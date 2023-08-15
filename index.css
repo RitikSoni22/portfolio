@@ -1,0 +1,232 @@
+:root {
+    --primary-bg-color: #eee;
+    --primary-bg-color-inverted: #111;
+    --primary-font-color: #5b677b;
+    --primary-font-color-inverted: #ccc;
+    --primary-font-hover-color: #444d5c;
+    --primary-border-color: #8697b5;
+
+    --secondary-font-color: #5b677b;
+}
+
+.light-mode {
+    --primary-bg-color: #eee;
+    --primary-bg-color-inverted: #5b677b;
+    --primary-font-color: #5b677b;
+    --primary-font-color-inverted: #ccc;
+    --primary-font-hover-color: #444d5c;
+    --primary-border-color: #444d5c;
+
+    --secondary-font-color: #5b677b;
+}
+
+.dark-mode {
+    --primary-bg-color: #111;
+    --primary-bg-color-inverted: #eee;
+    --primary-font-color: #ccc;
+    --primary-font-color-inverted: #5b677b;
+    --primary-font-hover-color: #c1ccde;
+    --primary-border-color: #c1ccde;
+
+    --secondary-font-color: #ddd;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--primary-bg-color);
+    color: var(--primary-font-color);
+    margin: 0 auto;
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    transition: all ease 0.7s;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+
+
+
+/*  underline on hover  */
+.underline {
+    color: var(--primary-font-color);
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+}
+
+.underline:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary-font-color);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+
+.underline:hover:after {
+    color: var(--primary-font-hover-color);
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+
+
+/*  header  */
+
+.header {
+    margin: 0 auto;
+    width: 80%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.header>.name {
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 54px;
+    margin: 0;
+}
+
+.header>.name>.age {
+    font-size: 32px;
+    color: var(--secondary-font-color);
+}
+
+.header>.social-icons {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    margin-top: 32px;
+}
+
+.header>.social-icons>a>img {
+    height: 24px;
+    filter: grayscale(100%);
+    transform: scale(1);
+    transition: all ease 0.3s;
+}
+
+.header>.social-icons>a>img:hover {
+    filter: grayscale(0%);
+    transform: scale(1.25);
+}
+
+
+
+
+/*  navbar   */
+
+.navbar {
+    width: 75vw;
+    margin: 0 auto;
+    border-radius: 100px;
+    overflow: hidden;
+    transition: all ease 1s;
+}
+
+.navbar.sticky {
+    width: 90vw;
+    position: fixed;
+    top: 24;
+    border: 1px solid var(--primary-border-color);
+    background-color: var(--primary-bg-color);
+}
+
+.navbar-inner {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 24px;
+}
+
+.navbar-inner>a {
+    color: var(--primary-font-color);
+    text-decoration: none;
+    transition: all ease 0.3s;
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.navbar-inner>a:hover {
+    color: var(--primary-font-hover-color);
+}
+
+.navbar-inner>.links {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+
+
+
+/*  technologies  */
+
+.technologies {
+    width: 100%;
+    height: 100vh;
+    padding-top: 120px;
+}
+
+.tech-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.tech-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px;
+    border-radius: 16px;
+    width: 75px;
+    max-height: 200px;
+    cursor: pointer;
+    transition: all ease 0.5s;
+    color: var(--primary-font-color);
+    overflow: hidden;
+}
+
+.tech-card:hover {
+    align-items: flex-start;
+    width: 250px;
+    background-color: var(--primary-bg-color-inverted);
+    color: var(--primary-font-color-inverted);
+}
+
+.tech-card:hover img {
+    height: 32px;
+}
+
+.tech-card:hover h4 {
+    display: block;
+}
+
+.tech-card>img {
+    height: 64px;
+    transition: all ease 0.5s;
+}
+
+.tech-card>h3 {
+    margin: 6px 0 12px 0;
+}
+
+.tech-card>h4 {
+    display: none;
+    margin: 0;
+    font-size: 12px;
+    font-weight: 300;
+}
