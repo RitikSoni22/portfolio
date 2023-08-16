@@ -6,12 +6,12 @@ document.getElementById('toggle-theme-button').onclick = () => {
 // navbar sticky on scroll
 window.onscroll = () => {
     let navbar = document.getElementById("navbar");
-    if (window.scrollY > navbar.offsetTop) {
-        console.log('sticky');
+    console.log('window.scrollY', window.scrollY)
+    console.log('navbar.scrollTop', navbar.scrollTop)
+    if (window.scrollY > 525) {
         navbar.classList.add("sticky");
         document.getElementById("navbar-initials").innerHTML = "Ritik Soni";
     } else {
-        console.log('not-sticky');
         navbar.classList.remove("sticky");
         document.getElementById("navbar-initials").innerHTML = "RS";
     }
